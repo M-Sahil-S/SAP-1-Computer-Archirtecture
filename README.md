@@ -14,3 +14,17 @@ This project builds on that model to explore computer architecture through physi
 # *Why build a computer from scratch?* #
 
 Modern software sits on layers of abstraction that hide how computation actually happens at the hardware level. This project is an attempt to step below those layers and understand how a computer works from first principles — how data moves across a bus, how instructions are decoded, and how discrete components cooperate to perform computation.
+
+# *Foundations* # 
+
+Before starting this project, I worked on a series of smaller builds focused on digital logic fundamentals — including basic gates, combinational circuits, and simple data flow systems. These projects helped build the intuition required to approach a full computer architecture at the hardware level.
+
+Relevant groundwork:
+
+Logic Gates Implementation → [repo link]
+
+Combinational Circuits → [repo link]
+
+Basic Register Experiments → [repo link]
+
+This SAP-1 build extends those ideas into a complete computing system where individual components are integrated into a functioning architecture.
