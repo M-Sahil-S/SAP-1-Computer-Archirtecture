@@ -1,5 +1,5 @@
 # SAP-1-Computer-Archirtecture
-Hardware implementation of the SAP-1 8-bit computer architecture using discrete logic
+*Hardware implementation of the SAP-1 8-bit computer architecture using discrete logic*
 
 While exploring foundational resources on digital electronics and computer architecture, I came across the SAP-1 (Simple-As-Possible) computer model from Digital Computer Electronics.
 
@@ -11,3 +11,5 @@ Rather than emulating a modern PC, SAP-1 exists to teach the underlying logic of
 
 This project builds on that model to explore computer architecture through physical implementation and experimentation.
 
+*Why build a computer from scratch?*
+Modern software sits on layers of abstraction that hide how computation actually happens at the hardware level. This project is an attempt to step below those layers and understand how a computer works from first principles — how data moves across a bus, how instructions are decoded, and how discrete components cooperate to perform computation.
