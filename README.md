@@ -7,8 +7,7 @@ the difference? form factor and eficiency changed over the years. From first mac
 but everything comes at a cost: old machines were large and slow, yet were drastically easier to understand about their workings, comparewd to modern CPU architecture which are small and fast, yet are a tangled mess underneath.
 
 so how do we understand how modern CPU and computer architecture works?
-
-well, i was recently reading this book by [] and it mentioned SAP model architetcure
+well,i was recently reading this book by [] and it mentioned SAP model architetcure
 
 An SAP or Simple-As-Possible computer is a stripped down version of modern computer, just showcasing the necessary parts through the fundamentals to better understand how a modern CPU works.
 
