@@ -4,7 +4,7 @@ Nothing has changed fundamentally sicne the first devices that followed instruct
 The idea was to create a machine that could do the work for humans : wether being long calculations,storing information or compute things human mind couldn't.
 the difference? form factor and eficiency changed over the years. From first machines to modern CPUs and Computers, The size and package became smaller and compute times reduced significantly/ in other words, computational power increased while reducing th form factor. making them more efficeint ober time
 
-but everything comes at a cost: old machines were large and slow, yet were drastically easier to understand about their workings, comparewd to modern CPU architecture which are small and fast, yet are a tangled mess underneath.
+but everything comes at a cost: old machines were large and slow, yet were drastically easier to understand about their workings, comparewd to modern CPU architecture which are small and fast, yet are a tangled mess underneath.    ...
 
 so how do we understand how modern CPU and computer architecture works?
 well,i was recently reading this book by [] and it mentioned SAP model architetcure
