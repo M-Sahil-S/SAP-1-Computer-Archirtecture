@@ -12,3 +12,5 @@ well,i was recently reading this book by [] and it mentioned SAP model architetc
 An SAP or Simple-As-Possible computer is a stripped down version of modern computer, just showcasing the necessary parts through the fundamentals to better understand how a modern CPU works.
 
 and that is exactly the goal of this project. to build an SAP architectuire based CPU of my own which teaches as to how this pinacle of technology works at the fundamental level
+
+## this is a temp read me ##
