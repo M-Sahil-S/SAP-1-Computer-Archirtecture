@@ -25,7 +25,7 @@ A computer which is executing its commands on falling edge of the pulse is calle
 Our SAP computer is synced at rising edge of the pulse. Ie all the commands and executions happen when our clock pulse switches from low to high state.
 
 <details>
-<summary>Parts List</summary>
+<summary> # Parts List # </summary>
 
 | Component | Value | Qty |
 |-----------|-------|-----|
