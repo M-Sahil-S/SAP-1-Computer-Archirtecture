@@ -12,7 +12,7 @@ Without a clock, every module would act at its own pace. A register might try to
 2. the state when the pusle on the clock falls back Xv to 0v after an interval or HIGH to LOW or 1 to 0 is known as falling edge of the pulse
 
 The goal of a clock module is to generate these pulses continuosly.  
-Thus going from HIGH > (FALLS) LOW > (RISES) HIGH > (FALLS) LOW > (RISES) HIGH > (FALLS) LOW ............ 
+Thus going from HIGH > (FALLS) LOW > (RISES) HIGH > (FALLS) LOW > (RISES) HIGH > (FALLS) LOW ............   
 And every time when state either rises or falls. the computer executes one command. and thus we need these pulses and clock signal to go on continuosly indefinetly so that the computer can keep operating and executing commands.
 
 Our SAP computer is synced at rising edge of the pulse. Ie all the commands and executions happen when our clock pulse switches from low to high in that intermediate stage
