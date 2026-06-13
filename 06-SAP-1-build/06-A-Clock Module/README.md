@@ -23,3 +23,17 @@ A computer which is executing its commands on rising edge of pulse is called a r
 A computer which is executing its commands on falling edge of the pulse is called a falling edge synced system
 
 Our SAP computer is synced at rising edge of the pulse. Ie all the commands and executions happen when our clock pulse switches from low to high state.
+
+<details>
+<summary>Parts List</summary>
+
+| Component | Value | Qty |
+|-----------|-------|-----|
+| NE555 Timer | — | 2 |
+| Resistor | 1kΩ | 2 |
+| Potentiometer | 1MΩ | 1 |
+| Capacitor | 10µF | 1 |
+| Push button | — | 1 |
+| Toggle switch | SPDT | 1 |
+
+</details>
