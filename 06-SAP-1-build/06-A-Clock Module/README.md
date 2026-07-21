@@ -64,8 +64,19 @@ pin 2 is also connectd to gnd via a push button which we will use o generate the
 
 since initailly latch is in rest mode ie Q* = 0. it powers the base of transistor and and thus any cuirrecnt flowiung through the 1M ohm resistor goes to gnd and any charg eon capacitor also discahges via gnd and transistor.
 
-Next when siwtch is pressed : V-B is no 0v and since V-b(0) >>> V+b(1.67). the comparator gioves an out put ehich sets the latch. givuing us an out put and and Q* now = 0
+Next when siwtch is pressed : V-B is no 0v and since V-b(0) <<<  V+b(1.67). the comparator gioves an out put ehich sets the latch. givuing us an out put and and Q* now = 0
 
 after that the base no longer gets powered. the curreent starts flowing through gnd via the capacitor instead of transistor and thus cahrginbg the capcitor. (note that siwcthed is realeased by this point. we onmly press it for a breif sec and let go)
 
-the capacit starts chargings for the duartin we hod down the siwcth , assume it charges >>> 3.3 v while the duration of our switch is presesed. now V+A >>> 3.3 
+the capacit starts chargings for the duartin we hod down the siwcth , assume it charges >>> 3.3 v while the duration of our switch is presesed. now V+A >>> 3.3 thus it resets the latch which turns of the output an dhold it at 0 while teh current again drains via transistor again and capcitor also discahrges via transisot.e sentially repeating the cycle when button is pressed next.
+
+# pulse generatiuon 
+
+to make this system genertae a pulse we need it such that capcitor charges fully (or atleast > 3.3v) in the duration we momentarily press the swithc and on the counteratcive side we want the latch to turn on. capciutor to charge thus resetiing thge lacth and then discahrge again for it to fall back to 0. there are 2 ways 2 do this.
+
+first we need the time vairble delta T to be ---> 0 ie we want capcitopr to charge and discharge in as less time as possible. thu sreducing duty cycle to as little as possible ie. duty cycle delta D ---> 0 which wil essentially simulate the clock cycle of going from LOW >>> HIGH >>> LOW again in that delat T --- > 0 tiem frame refrence. and our computer can detect the rising edge froim that. and while if anyt debouncing cocurs psot press of the switch. it wont matter sicne were using an SR latch so out put eill be latched no matter what unless the capcitor refrecne dischatrges to 0. esentially rmoving the dwitch bouncing. to do that we can use a capacitor witha a very small caapcity like 0.1 nF thus it charges quicky in th etim edelta T---> 0 refecne which is the time we keep the swicth pressed. and sicne it discharsges very quickly too since its very small capcituy. it also gives us duty cyclke delta D --- > sicne its pretty much instantanous. thus simulating aa pulse for us. thus in thi smanner we can create a swicth debouvner for the clockj using a 555 timer vbelow. ive shown the schemtics below
+
+<!-- attach a schemtic and LT SPCIE grapghs here --->
+
+# slector and halt line
+
