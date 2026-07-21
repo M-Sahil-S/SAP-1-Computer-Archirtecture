@@ -81,3 +81,28 @@ pin 2 is also connectd to gnd via a push button which we will use o generate the
 
 # slector and halt line
 
+Now that we hav e2 independetnt clocks which can geenrate a pulse on demand as a mono tsble clock and a continoius ruynning clock as bistable clock. we need a way to seamlessly switch between them. also its a good idea to add a halt line which essentyialy stops the clock in its last position. this is use ful when debuggingf or we wanna stop the clock once our program is donrt executing/ for the halt line ansd selction. ive designed a circuit as shown below :
+
+<!- add a video in DLS of clock slelctor >
+
+first out put of both the clocks is fed into their independent AND gate, then second input of each of their AND gate is fed withg an out put of an SR NOR latcvh.
+
+from teh diagram :
+
+AND gate A : input A is clock 1 ; input B is Q out put of latch
+AND gate B : input A is clock 2 ; input B is Q* out of latch
+
+thus only one AND gate will out put a signal at a time which will be the clock out put itself. 
+
+Next both of these inputs are fed into an OR gate. thus either of the clock can be active to give an out put
+
+Next an input is fed into a NOT gate. thus;
+when HALT line is low --> NOT gate : high
+when HALT line is HIGH --> NOT gate : 
+
+the output of NOT gate is then anded with the out put of the OR gate which give us our finbal out put. thus whenerve halt line is pulled high. our clock will halt since anything comin g from or agte anded with 0 from halt line will essential out put 0 at and gate, ie our final output
+
+this essentially cocnludes the clock module
+
+we have a clcok module which can now generate a contionous PWM pulse along with a debounced clock which can generate pulses on demand. also we have a seamless way to switych between them and a HaLT line which halts/stops the clock output. this clock module will be used to keep every other mdoule which we build next in sync
+
