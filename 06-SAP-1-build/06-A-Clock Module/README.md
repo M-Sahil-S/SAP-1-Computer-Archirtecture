@@ -46,35 +46,35 @@ thinkj like a heavy load attached to a spring. if we pull that load down a ndn l
 
 although there are manier weays of making a debounciong circuits , isnce were on topic of 555 timer. im gonna use the same IC to amke it and casue its very cheap and common to find. the data sheet shows us that 555 timer conmtains an SR latch and were gonna use that to our advantage,
 
-here i have a simplified version of the 555 timer drawn.
- it essentially has an SR latch whos Q output is our pin 3. ie the out put pin of the iC and Q* pin is conneted to the base of a transistor. then one of the the pin sof transistoir is connected to gnd and other pin is connectd to pin 7 ie the discharge pin of the IC. essentially making a C B E transisior whiuch gives us a NPN tranbsistyor confiuguyration., basicaaly when the current flows through base of transistor via the Q* pin of SR latch. it connects the deischange pin 7 to gnd.
- 
-  next the resistoir nettwork insde thge ic sets 2 volateg dividers with refenec points of 1.67 v and 3.33 v as s hwon.. teh dischagre pin is also connected to 5v via a 1M ohm resistor and pin 6 is connected ot gnd via a capaitor. pin 6 and 7 bare connectd togethr on their own too
+>>> here i have a simplified version of the 555 timer drawn.
+>>> it essentially has an SR latch whos Q output is our pin 3. ie the out put pin of the iC and Q* pin is conneted to the base of a transistor. then one of the the pin sof transistoir is connected to gnd and other pin is connectd to pin 7 ie the discharge pin of the IC. essentially making a C B E transisior whiuch gives us a NPN tranbsistyor confiuguyration., basicaaly when the current flows through base of transistor via the Q* pin of SR latch. it connects the deischange pin 7 to gnd.
 
-the 3.33 v refrecne goes to inverting input of Comparator A which feeds into resety pin of SR lactjh
-the 1.67 v refrence goes to non inverting input of comparator B which feeds into set pin of SR latch
+  >>>next the resistoir nettwork insde thge ic sets 2 volateg dividers with refenec points of 1.67 v and 3.33 v as s hwon.. teh dischagre pin is also connected to 5v via a 1M ohm resistor and pin 6 is connected ot gnd via a capaitor. pin 6 and 7 bare connectd togethr on their own too
 
-noe essentially if we wnat lacth to set, and giv ean out put on pin 3. we want refrence V+ >>> V- on comparator B ie  1.67V (V+)(B) >>> V-(B) and if we want latych to reset we wnat V+(A) >>> 3,33V (V-)(B)
+>>>the 3.33 v refrecne goes to inverting input of Comparator A which feeds into resety pin of SR lactjh
+>>> the 1.67 v refrence goes to non inverting input of comparator B which feeds into set pin of SR latch
 
-the initial V-(B) is connected to pin 2 of thge ic (trigger) through a pull up resistor to 5v thus V-(B) is default to 5v. thus V-B (5v) >>>> V+(B) 1.67V. thdu we will have a 0 on input of set pin of latch thus on initial power up we will always start on 0 at Q pin. and a 1 at the reste pin and thu s1 at q* pin of latch.
+>>> noe essentially if we wnat lacth to set, and giv ean out put on pin 3. we want refrence V+ >>> V- on comparator B ie  1.67V (V+)(B) >>> V-(B) and if we want latych to reset we wnat V+(A) >>> 3,33V (V-)(B)
+
+>>> the initial V-(B) is connected to pin 2 of thge ic (trigger) through a pull up resistor to 5v thus V-(B) is default to 5v. thus V-B (5v) >>>> V+(B) 1.67V. thdu we will have a 0 on input of set pin of latch thus on initial power up we will always start on 0 at Q pin. and a 1 at the reste pin and thu s1 at q* pin of latch.
 
 pin 2 is also connectd to gnd via a push button which we will use o generate the pusle.
 
 # Workings #
 
-since initailly latch is in rest mode ie Q* = 0. it powers the base of transistor and and thus any cuirrecnt flowiung through the 1M ohm resistor goes to gnd and any charg eon capacitor also discahges via gnd and transistor.
+>>> since initailly latch is in rest mode ie Q* = 0. it powers the base of transistor and and thus any cuirrecnt flowiung through the 1M ohm resistor goes to gnd and any charg eon capacitor also discahges via gnd and transistor.
 
-Next when siwtch is pressed : V-B is no 0v and since V-b(0) <<<  V+b(1.67). the comparator gioves an out put ehich sets the latch. givuing us an out put and and Q* now = 0
+>>> Next when siwtch is pressed : V-B is no 0v and since V-b(0) <<<  V+b(1.67). the comparator gioves an out put ehich sets the latch. givuing us an out put and and Q* now = 0
 
-after that the base no longer gets powered. the curreent starts flowing through gnd via the capacitor instead of transistor and thus cahrginbg the capcitor. (note that siwcthed is realeased by this point. we onmly press it for a breif sec and let go)
+>>> after that the base no longer gets powered. the curreent starts flowing through gnd via the capacitor instead of transistor and thus cahrginbg the capcitor. (note that siwcthed is realeased by this point. we onmly press it for a breif sec and let go)
 
-the capacit starts chargings for the duartin we hod down the siwcth , assume it charges >>> 3.3 v while the duration of our switch is presesed. now V+A >>> 3.3 thus it resets the latch which turns of the output an dhold it at 0 while teh current again drains via transistor again and capcitor also discahrges via transisot.e sentially repeating the cycle when button is pressed next.
+>>> the capacit starts chargings for the duartin we hod down the siwcth , assume it charges >>> 3.3 v while the duration of our switch is presesed. now V+A >>> 3.3 thus it resets the latch which turns of the output an dhold it at 0 while teh current again drains via transistor again and capcitor also discahrges via transisot.e sentially repeating the cycle when button is pressed next.
 
 # pulse generatiuon 
 
-to make this system genertae a pulse we need it such that capcitor charges fully (or atleast > 3.3v) in the duration we momentarily press the swithc and on the counteratcive side we want the latch to turn on. capciutor to charge thus resetiing thge lacth and then discahrge again for it to fall back to 0. there are 2 ways 2 do this.
+>>> to make this system genertae a pulse we need it such that capcitor charges fully (or atleast > 3.3v) in the duration we momentarily press the swithc and on the counteratcive side we want the latch to turn on. capciutor to charge thus resetiing thge lacth and then discahrge again for it to fall back to 0. there are 2 ways 2 do this.
 
-first we need the time vairble delta T to be ---> 0 ie we want capcitopr to charge and discharge in as less time as possible. thu sreducing duty cycle to as little as possible ie. duty cycle delta D ---> 0 which wil essentially simulate the clock cycle of going from LOW >>> HIGH >>> LOW again in that delat T --- > 0 tiem frame refrence. and our computer can detect the rising edge froim that. and while if anyt debouncing cocurs psot press of the switch. it wont matter sicne were using an SR latch so out put eill be latched no matter what unless the capcitor refrecne dischatrges to 0. esentially rmoving the dwitch bouncing. to do that we can use a capacitor witha a very small caapcity like 0.1 nF thus it charges quicky in th etim edelta T---> 0 refecne which is the time we keep the swicth pressed. and sicne it discharsges very quickly too since its very small capcituy. it also gives us duty cyclke delta D --- > sicne its pretty much instantanous. thus simulating aa pulse for us. thus in thi smanner we can create a swicth debouvner for the clockj using a 555 timer vbelow. ive shown the schemtics below
+>>> first we need the time vairble delta T to be ---> 0 ie we want capcitopr to charge and discharge in as less time as possible. thu sreducing duty cycle to as little as possible ie. duty cycle delta D ---> 0 which wil essentially simulate the clock cycle of going from LOW >>> HIGH >>> LOW again in that delat T --- > 0 tiem frame refrence. and our computer can detect the rising edge froim that. and while if anyt debouncing cocurs psot press of the switch. it wont matter sicne were using an SR latch so out put eill be latched no matter what unless the capcitor refrecne dischatrges to 0. esentially rmoving the dwitch bouncing. to do that we can use a capacitor witha a very small caapcity like 0.1 nF thus it charges quicky in th etim edelta T---> 0 refecne which is the time we keep the swicth pressed. and sicne it discharsges very quickly too since its very small capcituy. it also gives us duty cyclke delta D --- > sicne its pretty much instantanous. thus simulating aa pulse for us. thus in thi smanner we can create a swicth debouvner for the clockj using a 555 timer vbelow. ive shown the schemtics below
 
 <!-- attach a schemtic and LT SPCIE grapghs here --->
 
