@@ -39,4 +39,11 @@ then any moduole C can read the data 1100 1100 from A normally.
 
 once were don. w can deatcivate OE pin of A, essentially disconnecting module A from bus an dactive OE of module B, thus new data on bus is 1010 1010. and any modue D can read that data normally. 
 
-thi sremoves errors and conflicts and helps su control which dat dgoes ouyt on the bus. thus triu state buffersd will be used wuith every module except for some special cases. this concludes the bus archiutecture and Trui state buffers module 
+thi sremoves errors and conflicts and helps su control which dat dgoes ouyt on the bus. thus triu state buffersd will be used wuith every module except for some special cases. 
+
+# tri state and clock sync 
+now that we have an indepnedent way to way out utputting andf raeeding data from bus. we need it synced. we cant just out put data  from module A while B is still outputting and C is reading and so on. this is where clock comes in. we essentially have our OE pin "anded" with clock module in trhe cicruity w make. so say A is outpuyting something and we enable the EO pin. it wont output datda on bus untill the next clock pulse arrives, ir clock going from low to high.
+
+consider this exaplme. assume module A is outputting data on bus, we set OE - A active , OE - B disactive and read C active. when clock pulses, the A will out put data. and C will read it and B will stay disactivated, all inm synce. next beforee the next clock cycle. we can set OE-A low and OE-B active and leave C read high. now as soon as next clock pulse arrives, the B will out put its data on bus and C will rwead that data while A will now stay disconnected . this is how a clock keeps all the modules and in sync and thus clock module is necessary.
+
+this is how Bus achitecture along with clock sync and tri state buffers help manage and read anmd output data across differnt modules
