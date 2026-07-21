@@ -28,7 +28,7 @@ Our Clock module consists of 2 different types of Clock Signals. Mono Stable and
 
 > but on the other hand when we are actually builduing the computer, we moight wanna manually pulkse the clock one command at a time. say we are debugging something or just wanna slow down the lcok to go at our own pace to see hwats going on while a program executes. for that we use a mono stable cvlock. a monostable clock is basically a pulse set in on estate (high or low) unless triggered by an ecxternal command. say for our computer a command executes at rising at of a clock so the monostable clock going from 0 >>> 1. so our mono stable clock will default to a state of 0. and we can say press a button and it will go high for a breif period of time and then default backl to zero until we press the button again. but the time it goes from 0 to 1. it generates a risijng edge which uis exactly what we need from a clock module to synce the commands on the computer. thus we can say generate a puls eby press of a button. debug and se ehwat we wanna work with and then when we are ready to execute the nect comnmand we press the button again to gebnerate anoither pulse and so on.
 
-thus a mono stablke clock will be used when debugging and builduing the computer whule a bistable clock will be used when we are executing the commands and running programs on the final build
+thus a mono stablke clock will be used when debugging and builduing the computer whule a bistable clock will be used when we are executing the commands and running programs on the final build. here is the clock module i built. architecture is explained below 
 
 # CLock Module Scematics #
 
